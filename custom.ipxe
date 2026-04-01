@@ -1,12 +1,17 @@
 #!ipxe
 ###
-### netboot.xyz-custom menu
+### ThoughtWave Kiosk — prepaidvdi.com
+###
+### Boots a minimal Debian ramdisk into fullscreen Chromium.
+### Defaults to prepaidvdi.com; override with kiosk_url= kernel param.
+###
+### Usage from iPXE prompt:
+###   chain https://boot.thoughtwave.com/kiosk.ipxe
 ###
 
 :start
-echo Hello world!
-sleep 10
-goto custom_exit
+echo Loading ThoughtWave Kiosk...
+chain https://boot.thoughtwave.com/kiosk.ipxe || goto custom_exit
 
 :custom_exit
 exit 0
